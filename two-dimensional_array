@@ -1,0 +1,58 @@
+def analysis(lst):# We take the defined array as the parameter of our function.
+  n=0
+  b=0
+  n_lst=[]
+  #initalize
+  while n<(len(lst)):
+    while b==0:
+      for k in range(1,len(lst[n])):
+        for j in range(n+1,len(lst)):
+          for m in range(1,len(lst[j])):
+            if lst[n][k]==lst[j][m]:
+              n_lst.append([lst[n][0],lst[j][0],lst[n][k],])
+        if lst[n][k]==lst[n][-1]:
+          b=1
+          break
+    n+=1
+    b=0
+ 
+  return n_lst
+
+def ref(b_lst):# We define a function to make our array suitable to show to the user.
+  #The array whose parameter contains the common elements and of the array themselves.
+  s_lst=[]
+  a=0
+  # initialize
+  while a<(len(b_lst)):
+    lst=[]
+    j=0
+    i=a
+    x=b_lst[i][0]
+    y=b_lst[i][1]
+    while j < (len(b_lst)):
+      if b_lst[j][0]==x and b_lst[j][1]==y:
+        lst.append(b_lst[j][2])
+        del b_lst[j]
+        j-=1
+      j+=1
+    j=0
+    if len(lst)==0:
+      lst.append(b_lst[i][2])
+    s_lst.append([x,y,len(lst),lst])
+    # We throw elements into the array where the elements to be shown to the user will be found.
+
+  for i in s_lst:
+    sng=""
+    for x in i[3]:
+      sng+=x+" "
+    print(i[0]," - ",i[1],"Ortak Şarkı Sayısı: ",i[2]," Ortak Şarkı/lar: ",sng)
+  print("There Is No Element In Common Among Other Elements Of The Array.")
+  # We've created the part that the user can see, we print it to the screen.
+
+array=[["Sam", "Eminem-Rap God", "Adele-Hello"],
+       ["Jack", "Zaz-Jue Veux", "Tarkan-Kuzu Kuzu", "Eminem-Lose Yourself"],
+       ["Henry", "Sting-Shape Of My Heart", "Delacey-Deram It Possible", "Eminem-Lose Yourself"],
+       ["David", "Sting-Shape Of My Heart", "Adele-Hello"]]
+
+ref(analiz(array))
+
