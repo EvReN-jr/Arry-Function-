@@ -54,5 +54,5 @@ array=[["Sam", "Eminem-Rap God", "Adele-Hello"],
        ["Henry", "Sting-Shape Of My Heart", "Delacey-Deram It Possible", "Eminem-Lose Yourself"],
        ["David", "Sting-Shape Of My Heart", "Adele-Hello"]]
 
-ref(analiz(array))
+ref(analysis(array))
 
